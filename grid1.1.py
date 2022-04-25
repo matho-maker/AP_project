@@ -25,6 +25,29 @@ for row in range(10):
     # in this row
     grid.append([])
     for column in range(10):
-        grid[row].append(0)  # Append a cell
+        grid[row].append('cell')  # Append a cell
+
+class cell():
+    def __init__(self, row, column, type, dimension, pente):
+        self.row = row
+        self.column = column
+        self.type = {'groomed': [0.15,'grey'], 'powder': [0.10,'white'],'ice': [0.6, 'blue'], 'grass':[0.95, 'green'], 'bumps': [0.4, 'grey'], 'trees':1} #bumps si va vite tombe sinon tombe pas,
+        self.dimension_cell = 5  # dimension d'une cellule -> 5 x 5 metres, length of the side of a square, a cell = a square
+        self.pente = random.randint(6,40) #à vérifier  ---> besoin de la pente ? en %
+
+    def get_type(self):
+        return(self.type)
+
+
+class constructor(cell):
+    def __init__(self, type_construct):
+        super().__init__(self,type_construct)
+        for typ in self.type:
+            self.type_construct = random.choice(typ)  #ou dans cell?
+
+
+
+
 
 print(grid)
+

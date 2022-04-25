@@ -19,11 +19,20 @@ class Skiers(object):
     def get_dexterity(self):
         return self.dexterity
 
+    def set_dexterity(self):
+        return self.dexterity
+
     def get_equipment(self):
+        return self.equipment
+
+    def set_equipment(self):
         return self.equipment
 
     def get_weight(self):
         return self.weight
+
+    def set_weight(self):
+
 
     def get_balance(self):
         return self.balance
