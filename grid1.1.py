@@ -1,6 +1,6 @@
 #####Pygame pre-made map
 
-
+import numpy as np
 import pygame
 from pygame.locals import *
 from pygame.color import THECOLORS
