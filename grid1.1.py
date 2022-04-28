@@ -1,13 +1,12 @@
-#####Pygame pre-made map
-
 import numpy as np
 import pygame
 from pygame.locals import *
 from pygame.color import THECOLORS
 import random
-import enum
+import numpy as np
+from cells import *
 
-# Define some colors
+"""# Define some colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
@@ -16,7 +15,7 @@ WIDTH = 30
 HEIGHT = 30
 
 # This sets the margin between each cell
-MARGIN = 5
+MARGIN = 5"""
 
 #{'groomed': [0.15,'grey'], 'powder': [0.10,'white'],'ice': [0.6, 'blue'], 'grass':[0.95, 'green'], 'bumps': [0.4, 'grey'], 'trees':1}
 
@@ -46,57 +45,8 @@ def create_map():
 
     return grid
 
-
-class cell():
-    def __init__(self, row, column): # quand tu ne donnes pas les paramètres toi même ne pas mettre en arguments
-        self.row = row
-        self.column = column
-        self.dimension = 5  # dimension d'une cellule -> 5 x 5 metres, length of the side of a square, a cell = a square
-        self.pente = random.randint(6,40) #à vérifier  ---> besoin de la pente ? en %
-
-
-
-class constructor(cell):
-    def __init__(self, type_construct):
-        super().__init__(self,type_construct)
-        for typ in self.type:
-            self.type_construct = random.choice(typ)  #ou dans cell?
-
-#child class
-class groomed(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 0.15
-
-class powder(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 0.10
-
-class ice(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 0.6
-
-class grass(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 0.95
-
-class bumps(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 0.4
-        #if speed > x: self.fall= 0.8
-        #if speed < x: self.fall= 0.2
-
-class trees(cell):
-    def __init__(self, row, column):
-        cell.__init__(self, row, column)
-        self.fall = 1
-        #if trees: break
-
-
 grid = create_map()
+grid = np.array(grid)
 print(grid)
 
+# a implémenter probabilité conditionnelle entre terrains
