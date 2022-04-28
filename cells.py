@@ -106,3 +106,19 @@ class trees(cell):
 
     def __repr__(self):
         return "tree"
+
+class wetsnow(cell):
+    def __init__(self, row, column):
+        cell.__init__(self, row, column)
+        self.fall = 0.5
+        self.mu = 0.14
+        self.penalty = 1.1
+
+    def get_wetsnow(self):
+        return self.wetsnow
+
+    def set_wetsnow(self, x):
+        self.ice = x
+
+    def __repr__(self):
+        return "wet snow"

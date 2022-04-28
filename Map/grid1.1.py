@@ -42,6 +42,8 @@ def create_map():
                     grid[row].append(bumps(row, column))
                 case 5 :
                     grid[row].append(trees(row, column))
+                case 6 :
+                    grid[row].append(wetsnow(row, column))
 
     return grid
 
