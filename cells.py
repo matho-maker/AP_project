@@ -8,11 +8,12 @@ class cell():
         self.dimension = 5  # dimension d'une cellule -> 5 x 5 metres, length of the side of a square, a cell = a square
         self.slope = random.randint(6,40) #à vérifier  ---> besoin de la pente ? en %
 
-#child class
+#child class of cell by types of land
 class groomed(cell):
     def __init__(self, row, column):
         cell.__init__(self, row, column)
         self.fall = 0.15
+        self.mu = 0.1
 
     def get_groomed(self):
         return self.groomed
@@ -27,6 +28,8 @@ class powder(cell):
     def __init__(self, row, column):
         cell.__init__(self, row, column)
         self.fall = 0.10
+        self.mu = 0.1
+        self.penalty = 1
 
     def get_powder(self):
         return self.powder
@@ -41,6 +44,8 @@ class ice(cell):
     def __init__(self, row, column):
         cell.__init__(self, row, column)
         self.fall = 0.6
+        self.mu = 0.03
+        self.penalty = 2
 
     def get_ice(self):
         return self.ice
@@ -55,6 +60,8 @@ class grass(cell):
     def __init__(self, row, column):
         cell.__init__(self, row, column)
         self.fall = 0.95
+        self.mu = 0.2
+        self.penalty = 1.5
 
     def get_grass(self):
         return self.grass
@@ -71,6 +78,8 @@ class bumps(cell):
         self.fall = 0.4
         #if speed > x: self.fall= 0.8
         #if speed < x: self.fall= 0.2
+        self.mu = 0.1
+        self.penalty = 1.1
 
     def get_bumps(self):
         return self.bumps
@@ -86,6 +95,8 @@ class trees(cell):
         cell.__init__(self, row, column)
         self.fall = 1
         #if trees: break
+        self.mu = 0
+        self.penalty = 9999
 
     def get_tree(self):
         return self.tree
