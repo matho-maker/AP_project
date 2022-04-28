@@ -35,7 +35,7 @@ grid[1][5] = 1
 
 print(grid)
 
-""" Initialize pygame
+# Initialize pygame
 pygame.init()
 
 # Set the HEIGHT and WIDTH of the screen
@@ -93,49 +93,8 @@ while not done:
 pygame.quit()
 
 
-class cell():
-    def __init__(self, row, column, type, dimension, pente, pass_on):
-        self.row = row
-        self.column = column
-        self.type = {'groomed': [0.15,'gray'], 'powder': [0.10,'white'],'ice': [0.6, 'blue'], 'grass':[0.95, 'green'], 'bumps': [0.4, 'grey'], 'trees':1} #bumps si va vite tombe sinon tombe pas,
-        self.dimension_cell = 5  # dimension d'une cellule -> 5 x 5 metres, length of the side of a square, a cell = a square
-        self.pente = random.randint(6,40) #à vérifier  ---> besoin de la pente ? en %
-        self.pass_on = [0,1]
-
-#classe fille pour chaque type
-
-class groomed(cell):
-    def __
 
 
-class constructor(cell):
-    def __init__(self, type_construct):
-        super().__init__(self,type_construct)
-        for typ in self.type:
-            self.type_construct = random.choice(typ)  #ou dans cell?
-
-#    def neighbor(self):
- #       for j in column:
-  #          if (self.type_construct=='tree' and grid[i][j]):
-   #             while self.type_construct == random.choice(type)
-
-##à compléter
-
-
-
-
-   # def new_cell(self, grid, i, j):  # row=i, column=j
-    #    for i in row:  ##still needed?
-     #       for j in column:
-      #          grid[i][j] = new_cell()  #  -> grid car veut ajouter des nouveaux types de cellules
-
-    def pass_on_cell(self, pass_on):  # event type = 1 if pass on cell, =0 if can't pass on cell
-        if pass_on == 1:
-            return pygame.event.set_allowed.pass_on_cell()
-        elif pass_on == 0:
-            return pygame.event.set_blocked.pass_on_cell()
-        if self.type_construct== 'tree':
-            pass_on ==0
 
 
 #color for the map
@@ -164,37 +123,4 @@ def search_color(name):
 # for search*
 color_groups = ['', 'white', 'purple', 'green', 'dark', 'light', 'red', 'blue', 'orange', 'gray', 'blue', 'green']
 
-'''class neighbor():
-    def __init__(self):
 
-    def
-        # class neighbor chaque cell a une liste de ces voisins, (inclure dedans contrainte tree? mieux maybe?)
-        #va vers l'extérieur
-
-        # faire un autre def?
-        for i in row:
-            if cell(type_construct == "trees")[i] and cell(type_construct == "trees")[i + 1]:  # ne pas avoir ligne d'arbres    ##appeler les coord de la grille?
-                type_construct[i] = random.choice(
-                    type)  # reroll the random choice of one or multiple cell in the row in order to avoid a full line of trees
-                # ou .droplevel() une case, une ligne
-'''
-##def viz_map():                                                            # fonction audrey pour la visualisation
-# viz= np.zeros[nb_lines,nb_col]
-# for i in nb_lines:
-#  for j in nb_column:
-#    viz[i][j]= map[i][j].type.to_string()
-# print(viz)
-
-
-##Notes: pygame.event: https://www.pygame.org/docs/ref/event.html
-# pygame.event.get_grab: test if the program is sharing input devices, for skiers?
-# pygame.sprite: https://www.pygame.org/docs/ref/sprite.html
-#grid autre: https://stackoverflow.com/questions/33963361/how-to-make-a-grid-in-pygame
-
-#qui va vers l'extérieur, proba de type de terrain change si bcp de glace à une endroit plus -> rapport entre
-
-
-'''-voir .clock
--voir neighbor pour jolie carte colorée -> un type = une couleur
--voir neighbor avec pas ligne case de tree'''
-"""
