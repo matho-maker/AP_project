@@ -19,23 +19,26 @@ class Skiers(object):
     def get_dexterity(self):
         return self.dexterity
 
-    def set_dexterity(self):
-        return self.dexterity
+    def set_dexterity(self, x):
+        self.dexterity = x
 
     def get_equipment(self):
         return self.equipment
 
-    def set_equipment(self):
-        return self.equipment
+    def set_equipment(self, x):
+        self.equipment = x
 
     def get_weight(self):
         return self.weight
 
-    def set_weight(self):
-
+    def set_weight(self, x):
+        self.weight = x
 
     def get_balance(self):
         return self.balance
+
+    def set_balance(self, x):
+        self.balance = x
 
     def level(self):
 
@@ -55,6 +58,9 @@ class Skiers(object):
     def get_level(self):
         return self.level
 
+    def set_level(self, x):
+        self.level = x
+
     def bonus(self):
 
         """Bonus function that gives the skier a time bonus (multiplicator) if according to its level
@@ -72,10 +78,13 @@ class Skiers(object):
             self.bonus = 1
         return self.bonus
 
-    # def orientation(self):
-
     def get_bonus(self):
         return str(self.bonus)
+
+    def set_bonus(self, x):
+        self.bonus = x
+
+    # def orientation(self):
 
     def __str__(self):
         return "Skier's attributes : " + str(self.dexterity) + ' dexterity, ' + str(
@@ -88,35 +97,3 @@ print(a)
 b = Skiers()
 print(b)
 
-# Create a sample of competitors
-Competitors = []
-for i in range(10):
-  Competitors.append(Skiers())
-for n in Competitors:
-  print(n)
-
-# Create a dataframe of competitors
-Dexterity=[]
-for z in Competitors:
-  Dexterity.append(z.get_dexterity())
-
-Equipment=[]
-for z in Competitors:
-  Equipment.append(z.get_equipment())
-
-Weight=[]
-for z in Competitors:
-  Weight.append(z.get_weight())
-
-Level=[]
-for z in Competitors:
-  Level.append(z.get_level())
-
-Balance=[]
-for z in Competitors:
-  Balance.append(z.get_balance())
-
-zipped = list(zip(Dexterity, Equipment, Weight, Level, Balance))
-competitors = pd.DataFrame(zipped, columns=('Dexterity','Equipment', 'Weight','Level', 'Balance'))
-competitors.index.names = ['Competitor']
-print(competitors.head())
